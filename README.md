@@ -4,14 +4,6 @@ Inventário virtual dos bens da Casa: produtos com fotos, tags, estatísticas do
 
 Projeto da disciplina **Engenharia e Arquitetura de Sistemas** (FECAP, CCOMP 4 Noturno), com o Prof. MSc. Luis Fernando dos Santos Pires.
 
-| Integrante        | RA       |
-| ----------------- | -------- |
-| Gabriel Diniz     | 25027858 |
-| Gian Lemes        | 25027511 |
-| Harry             | 25027808 |
-| Letícia Rodrigues | 25027748 |
-| Said Sales        | 25027606 |
-
 ## Estrutura
 
 ```
