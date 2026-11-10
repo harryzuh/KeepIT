@@ -1,0 +1,16 @@
+{
+  "name": "@keepit/shared",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Tipos, schemas Zod e códigos de erro usados pelo front-end e pela API.",
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "scripts": {
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "zod": "^4.6.7"
+  }
+}

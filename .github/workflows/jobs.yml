@@ -1,0 +1,22 @@
+name: Jobs agendados
+
+# Chama a rota protegida da API que expira assinaturas e apaga contas excluídas (RF37, RNF16).
+# Fica desligado até o M5 implementar POST /internal/jobs. Para ligar, em Settings → Secrets and variables → Actions:
+#   - variável JOBS_ATIVOS = true
+#   - variável API_URL = endereço da API no Render
+#   - secret JOBS_KEY = mesmo valor de JOBS_KEY na API
+
+on:
+  schedule:
+    - cron: '17 * * * *'
+  workflow_dispatch:
+
+jobs:
+  executar:
+    if: vars.JOBS_ATIVOS == 'true'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Chamar POST /internal/jobs
+        run: |
+          curl -fsS -X POST "${{ vars.API_URL }}/internal/jobs" \
+            -H "x-jobs-key: ${{ secrets.JOBS_KEY }}"

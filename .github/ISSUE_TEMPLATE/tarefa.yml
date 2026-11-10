@@ -1,0 +1,106 @@
+name: Tarefa (rota, tela ou teste)
+description: Uma tarefa pequena de um módulo, com o contrato que o agente vai seguir.
+title: '[M?] '
+labels: ['tarefa']
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Uma issue = uma rota, uma tela ou um ajuste. Copie o contrato de `docs/specs/<módulo>.md`.
+        O workflow `/implementar-issue` lê exatamente estes campos; se faltar algum, o agente para e pergunta.
+
+  - type: dropdown
+    id: modulo
+    attributes:
+      label: Módulo
+      options:
+        - M1 · Autenticação e Conta
+        - M2 · Casa e Membros
+        - M3 · Produtos e Tags
+        - M4 · Estatísticas
+        - M5 · Planos e Assinatura
+        - Infraestrutura (esqueleto, CI, padrões)
+    validations:
+      required: true
+
+  - type: dropdown
+    id: tipo
+    attributes:
+      label: Tipo
+      options:
+        - Rota da API
+        - Tela
+        - Rota + tela
+        - Teste
+        - Correção
+        - Documentação
+    validations:
+      required: true
+
+  - type: input
+    id: alvo
+    attributes:
+      label: Rota ou tela
+      placeholder: 'POST /produtos  ou  Tela 08 · Adicionar produto'
+    validations:
+      required: true
+
+  - type: input
+    id: quem
+    attributes:
+      label: Quem pode
+      placeholder: 'ADMIN, EDITOR'
+    validations:
+      required: true
+
+  - type: textarea
+    id: entrada
+    attributes:
+      label: Entrada
+      description: Campos recebidos (body, query, params) ou campos da tela.
+    validations:
+      required: true
+
+  - type: textarea
+    id: pre
+    attributes:
+      label: Pré-condições
+    validations:
+      required: true
+
+  - type: textarea
+    id: pos
+    attributes:
+      label: Pós-condições
+    validations:
+      required: true
+
+  - type: textarea
+    id: erros
+    attributes:
+      label: Erros
+      placeholder: '403 SEM_PERMISSAO; 409 PRODUTO_DUPLICADO; 422 DADOS_INVALIDOS'
+    validations:
+      required: true
+
+  - type: input
+    id: rastreio
+    attributes:
+      label: Casos de uso e requisitos
+      placeholder: 'UC020, UC022 · RF03, RF33'
+    validations:
+      required: true
+
+  - type: input
+    id: spec
+    attributes:
+      label: Seção da spec
+      placeholder: 'docs/specs/M3-produtos-tags.md#post-produtos'
+    validations:
+      required: true
+
+  - type: textarea
+    id: obs
+    attributes:
+      label: Observações
+      description: Dependências de outros módulos, telas do protótipo, decisões já tomadas.

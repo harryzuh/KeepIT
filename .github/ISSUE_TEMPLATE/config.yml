@@ -1,0 +1,5 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Specs dos módulos
+    url: https://github.com/harryzuh/KeepIT/tree/main/docs/specs
+    about: Contratos de cada rota e tela, de onde vêm os campos da issue.

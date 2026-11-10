@@ -1,0 +1,16 @@
+# Banco PostgreSQL local para desenvolvimento: docker compose up -d db
+# A DATABASE_URL correspondente já está em backend/.env.example.
+services:
+  db:
+    image: postgres:17
+    environment:
+      POSTGRES_USER: keepit
+      POSTGRES_PASSWORD: keepit
+      POSTGRES_DB: keepit
+    ports:
+      - '5432:5432'
+    volumes:
+      - keepit-db:/var/lib/postgresql/data
+
+volumes:
+  keepit-db:
